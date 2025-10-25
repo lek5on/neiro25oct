@@ -11,7 +11,7 @@ namespace MO_31_2_Savchenko_LeksonAI
     {
         private double[] inputPixels; // хранение состояния пикселей (0 - белый, 1 - чёрный)
         private Network network;
-        private NeuroNet.HiddenLayer hiddenlayer1;
+        private HiddenLayer hiddenlayer;
         //Конструктор
         public FormMain()
         {
@@ -27,12 +27,12 @@ namespace MO_31_2_Savchenko_LeksonAI
             if (((Button)sender).BackColor == Color.White)      // если белый
             {
                 ((Button)sender).BackColor = Color.Black;       // то меняем на чёрный
-                inputPixels[((Button)sender).TabIndex] = 1d;    // флаг состояния
+                inputPixels[((Button)sender).TabIndex] = 0d;    // флаг состояния
             }
             else // если чёрный
             {
                 ((Button)sender).BackColor = Color.White;       // то меняем на белый
-                inputPixels[((Button)sender).TabIndex] = 0d;    // флаг состояния
+                inputPixels[((Button)sender).TabIndex] = 1d;    // флаг состояния
             }
         }
 
@@ -66,7 +66,7 @@ namespace MO_31_2_Savchenko_LeksonAI
 
         private void button17_Click(object sender, EventArgs e)
         {
-            hiddenlayer1 = new NeuroNet.HiddenLayer(10, 10, NeuroNet.NeuronType.Hidden, nameof(hiddenlayer1));
+            hiddenlayer = new NeuroNet.HiddenLayer(10, 10, NeuroNet.NeuronType.Hidden, nameof(hiddenlayer));
         }
 
         private void buttonRecognize_Click(object sender, EventArgs e)
