@@ -1,4 +1,4 @@
-﻿
+
 using System;
 
 namespace MO_31_2_Savchenko_LeksonAI.NeuroNet
@@ -30,7 +30,7 @@ namespace MO_31_2_Savchenko_LeksonAI.NeuroNet
         public void Train(Network net)
         {
             net.input_layer = new InputLayer(NetworkMode.Train);
-            int epoches = 20;
+            int epoches = 10;
             double tmpSumError;
             double[] errors;
             double[] temp_gsums1;
@@ -67,12 +67,12 @@ namespace MO_31_2_Savchenko_LeksonAI.NeuroNet
                     net.hidden_layer1.BackwardPass(temp_gsums1);
 
                 }
-                
 
-                string pathDirWeights = AppDomain.CurrentDomain.BaseDirectory + "memory\\";
-                net.hidden_layer1.WeightInitialize(MemoryMode.SET, pathDirWeights + nameof(hidden_layer1) + "_memory.csv");
-                net.hidden_layer2.WeightInitialize(MemoryMode.SET, pathDirWeights + nameof(hidden_layer2) + "_memory.csv");
-                net.output_layer.WeightInitialize(MemoryMode.SET, pathDirWeights + nameof(output_layer) + "_memory.csv");
+
+
+                net.hidden_layer1.WeightInitialize(MemoryMode.SET, nameof(hidden_layer1) + "_memory.csv");
+                net.hidden_layer2.WeightInitialize(MemoryMode.SET, nameof(hidden_layer2) + "_memory.csv");
+                net.output_layer.WeightInitialize(MemoryMode.SET, nameof(output_layer) + "_memory.csv");
             }
         }
     }
