@@ -30,18 +30,18 @@ namespace MO_31_2_Savchenko_LeksonAI.NeuroNet
         public void Train(Network net)
         {
             net.input_layer = new InputLayer(NetworkMode.Train);
-            int epoches = 10;
+            int epoches = 15;
             double tmpSumError;
             double[] errors;
             double[] temp_gsums1;
             double[] temp_gsums2;
 
             e_error_avr = new double[epoches];
-            for(int k=0;k<epoches;k++)
+            for (int k = 0; k < epoches; k++)
             {
                 e_error_avr[k] = 0;
                 net.input_layer.Shuffling_Array_Rows(net.input_layer.Trainset);
-                for(int i=0;i<net.input_layer.Trainset.GetLength(0);i++)
+                for (int i = 0; i < net.input_layer.Trainset.GetLength(0); i++)
                 {
                     double[] tmpTrain = new double[15];
                     for (int j = 0; j < tmpTrain.Length; j++)
@@ -51,7 +51,7 @@ namespace MO_31_2_Savchenko_LeksonAI.NeuroNet
 
                     tmpSumError = 0;
                     errors = new double[net.fact.Length];
-                    for(int x=0;x< errors.Length;x++)
+                    for (int x = 0; x < errors.Length; x++)
                     {
                         if (x == net.input_layer.Trainset[i, 0])
                             errors[x] = 1.0 - net.fact[x];
@@ -67,13 +67,15 @@ namespace MO_31_2_Savchenko_LeksonAI.NeuroNet
                     net.hidden_layer1.BackwardPass(temp_gsums1);
 
                 }
-
+                e_error_avr[k] /= net.input_layer.Trainset.GetLength(0);
+            }
+                net.input_layer = null;
 
 
                 net.hidden_layer1.WeightInitialize(MemoryMode.SET, nameof(hidden_layer1) + "_memory.csv");
                 net.hidden_layer2.WeightInitialize(MemoryMode.SET, nameof(hidden_layer2) + "_memory.csv");
                 net.output_layer.WeightInitialize(MemoryMode.SET, nameof(output_layer) + "_memory.csv");
-            }
+            
         }
     }
 }
