@@ -29,6 +29,9 @@ namespace MO_31_2_Savchenko_LeksonAI
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -52,14 +55,16 @@ namespace MO_31_2_Savchenko_LeksonAI
             this.labelProbability = new System.Windows.Forms.Label();
             this.buttonRecognize = new System.Windows.Forms.Button();
             this.buttonTrain = new System.Windows.Forms.Button();
+            this.chartAvr = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_NecessaryOutput)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartAvr)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Black;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(132, 90);
+            this.button1.Location = new System.Drawing.Point(14, 64);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(30, 30);
@@ -72,7 +77,7 @@ namespace MO_31_2_Savchenko_LeksonAI
             // 
             this.button2.BackColor = System.Drawing.Color.Black;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(166, 90);
+            this.button2.Location = new System.Drawing.Point(48, 64);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(30, 30);
@@ -85,7 +90,7 @@ namespace MO_31_2_Savchenko_LeksonAI
             // 
             this.button3.BackColor = System.Drawing.Color.Black;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(200, 90);
+            this.button3.Location = new System.Drawing.Point(82, 64);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(30, 30);
@@ -98,7 +103,7 @@ namespace MO_31_2_Savchenko_LeksonAI
             // 
             this.button4.BackColor = System.Drawing.Color.Black;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(132, 124);
+            this.button4.Location = new System.Drawing.Point(14, 98);
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(30, 30);
@@ -111,7 +116,7 @@ namespace MO_31_2_Savchenko_LeksonAI
             // 
             this.button5.BackColor = System.Drawing.Color.Black;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(166, 124);
+            this.button5.Location = new System.Drawing.Point(48, 98);
             this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(30, 30);
@@ -124,7 +129,7 @@ namespace MO_31_2_Savchenko_LeksonAI
             // 
             this.button6.BackColor = System.Drawing.Color.Black;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(200, 124);
+            this.button6.Location = new System.Drawing.Point(82, 98);
             this.button6.Margin = new System.Windows.Forms.Padding(2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(30, 30);
@@ -137,7 +142,7 @@ namespace MO_31_2_Savchenko_LeksonAI
             // 
             this.button7.BackColor = System.Drawing.Color.Black;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Location = new System.Drawing.Point(132, 158);
+            this.button7.Location = new System.Drawing.Point(14, 132);
             this.button7.Margin = new System.Windows.Forms.Padding(2);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(30, 30);
@@ -150,7 +155,7 @@ namespace MO_31_2_Savchenko_LeksonAI
             // 
             this.button8.BackColor = System.Drawing.Color.Black;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Location = new System.Drawing.Point(166, 158);
+            this.button8.Location = new System.Drawing.Point(48, 132);
             this.button8.Margin = new System.Windows.Forms.Padding(2);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(30, 30);
@@ -163,7 +168,7 @@ namespace MO_31_2_Savchenko_LeksonAI
             // 
             this.button9.BackColor = System.Drawing.Color.Black;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Location = new System.Drawing.Point(200, 158);
+            this.button9.Location = new System.Drawing.Point(82, 132);
             this.button9.Margin = new System.Windows.Forms.Padding(2);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(30, 30);
@@ -176,7 +181,7 @@ namespace MO_31_2_Savchenko_LeksonAI
             // 
             this.button10.BackColor = System.Drawing.Color.Black;
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Location = new System.Drawing.Point(132, 192);
+            this.button10.Location = new System.Drawing.Point(14, 166);
             this.button10.Margin = new System.Windows.Forms.Padding(2);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(30, 30);
@@ -189,7 +194,7 @@ namespace MO_31_2_Savchenko_LeksonAI
             // 
             this.button11.BackColor = System.Drawing.Color.Black;
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Location = new System.Drawing.Point(166, 192);
+            this.button11.Location = new System.Drawing.Point(48, 166);
             this.button11.Margin = new System.Windows.Forms.Padding(2);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(30, 30);
@@ -202,7 +207,7 @@ namespace MO_31_2_Savchenko_LeksonAI
             // 
             this.button12.BackColor = System.Drawing.Color.Black;
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Location = new System.Drawing.Point(200, 192);
+            this.button12.Location = new System.Drawing.Point(82, 166);
             this.button12.Margin = new System.Windows.Forms.Padding(2);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(30, 30);
@@ -215,7 +220,7 @@ namespace MO_31_2_Savchenko_LeksonAI
             // 
             this.button13.BackColor = System.Drawing.Color.Black;
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Location = new System.Drawing.Point(132, 226);
+            this.button13.Location = new System.Drawing.Point(14, 200);
             this.button13.Margin = new System.Windows.Forms.Padding(2);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(30, 30);
@@ -228,7 +233,7 @@ namespace MO_31_2_Savchenko_LeksonAI
             // 
             this.button14.BackColor = System.Drawing.Color.Black;
             this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Location = new System.Drawing.Point(166, 226);
+            this.button14.Location = new System.Drawing.Point(48, 200);
             this.button14.Margin = new System.Windows.Forms.Padding(2);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(30, 30);
@@ -241,7 +246,7 @@ namespace MO_31_2_Savchenko_LeksonAI
             // 
             this.button15.BackColor = System.Drawing.Color.Black;
             this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button15.Location = new System.Drawing.Point(200, 226);
+            this.button15.Location = new System.Drawing.Point(82, 200);
             this.button15.Margin = new System.Windows.Forms.Padding(2);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(30, 30);
@@ -252,7 +257,7 @@ namespace MO_31_2_Savchenko_LeksonAI
             // 
             // numericUpDown_NecessaryOutput
             // 
-            this.numericUpDown_NecessaryOutput.Location = new System.Drawing.Point(245, 131);
+            this.numericUpDown_NecessaryOutput.Location = new System.Drawing.Point(127, 105);
             this.numericUpDown_NecessaryOutput.Name = "numericUpDown_NecessaryOutput";
             this.numericUpDown_NecessaryOutput.Size = new System.Drawing.Size(102, 20);
             this.numericUpDown_NecessaryOutput.TabIndex = 15;
@@ -261,7 +266,7 @@ namespace MO_31_2_Savchenko_LeksonAI
             // 
             this.button16.BackColor = System.Drawing.Color.White;
             this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button16.Location = new System.Drawing.Point(245, 195);
+            this.button16.Location = new System.Drawing.Point(127, 169);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(102, 24);
             this.button16.TabIndex = 16;
@@ -273,7 +278,7 @@ namespace MO_31_2_Savchenko_LeksonAI
             // 
             this.SaveTrainSample.BackColor = System.Drawing.Color.White;
             this.SaveTrainSample.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SaveTrainSample.Location = new System.Drawing.Point(245, 165);
+            this.SaveTrainSample.Location = new System.Drawing.Point(127, 139);
             this.SaveTrainSample.Name = "SaveTrainSample";
             this.SaveTrainSample.Size = new System.Drawing.Size(102, 23);
             this.SaveTrainSample.TabIndex = 17;
@@ -285,7 +290,7 @@ namespace MO_31_2_Savchenko_LeksonAI
             // 
             this.button17.BackColor = System.Drawing.Color.White;
             this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button17.Location = new System.Drawing.Point(245, 233);
+            this.button17.Location = new System.Drawing.Point(127, 201);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(102, 23);
             this.button17.TabIndex = 18;
@@ -297,7 +302,7 @@ namespace MO_31_2_Savchenko_LeksonAI
             // 
             this.labelOut.AutoSize = true;
             this.labelOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelOut.Location = new System.Drawing.Point(135, 36);
+            this.labelOut.Location = new System.Drawing.Point(18, 16);
             this.labelOut.Name = "labelOut";
             this.labelOut.Size = new System.Drawing.Size(70, 42);
             this.labelOut.TabIndex = 19;
@@ -307,7 +312,7 @@ namespace MO_31_2_Savchenko_LeksonAI
             // 
             this.labelProbability.AutoSize = true;
             this.labelProbability.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelProbability.Location = new System.Drawing.Point(220, 52);
+            this.labelProbability.Location = new System.Drawing.Point(102, 26);
             this.labelProbability.Name = "labelProbability";
             this.labelProbability.Size = new System.Drawing.Size(127, 24);
             this.labelProbability.TabIndex = 20;
@@ -317,7 +322,7 @@ namespace MO_31_2_Savchenko_LeksonAI
             // 
             this.buttonRecognize.BackColor = System.Drawing.Color.White;
             this.buttonRecognize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRecognize.Location = new System.Drawing.Point(245, 90);
+            this.buttonRecognize.Location = new System.Drawing.Point(127, 64);
             this.buttonRecognize.Name = "buttonRecognize";
             this.buttonRecognize.Size = new System.Drawing.Size(102, 30);
             this.buttonRecognize.TabIndex = 21;
@@ -327,19 +332,41 @@ namespace MO_31_2_Savchenko_LeksonAI
             // 
             // buttonTrain
             // 
-            this.buttonTrain.Location = new System.Drawing.Point(395, 54);
+            this.buttonTrain.BackColor = System.Drawing.Color.White;
+            this.buttonTrain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTrain.Location = new System.Drawing.Point(127, 231);
             this.buttonTrain.Name = "buttonTrain";
-            this.buttonTrain.Size = new System.Drawing.Size(75, 23);
+            this.buttonTrain.Size = new System.Drawing.Size(102, 22);
             this.buttonTrain.TabIndex = 22;
             this.buttonTrain.Text = "обучить";
-            this.buttonTrain.UseVisualStyleBackColor = true;
+            this.buttonTrain.UseVisualStyleBackColor = false;
             this.buttonTrain.Click += new System.EventHandler(this.buttonTrain_Click);
+            // 
+            // chartAvr
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.chartAvr.ChartAreas.Add(chartArea2);
+            this.chartAvr.Location = new System.Drawing.Point(258, 26);
+            this.chartAvr.Name = "chartAvr";
+            series2.BorderWidth = 3;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Name = "Series1";
+            this.chartAvr.Series.Add(series2);
+            this.chartAvr.Size = new System.Drawing.Size(632, 227);
+            this.chartAvr.TabIndex = 23;
+            this.chartAvr.Text = "chart1";
+            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            title2.Name = "Title1";
+            title2.Text = "График средних энергий ошибок";
+            this.chartAvr.Titles.Add(title2);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(581, 370);
+            this.ClientSize = new System.Drawing.Size(916, 276);
+            this.Controls.Add(this.chartAvr);
             this.Controls.Add(this.buttonTrain);
             this.Controls.Add(this.buttonRecognize);
             this.Controls.Add(this.labelProbability);
@@ -367,6 +394,7 @@ namespace MO_31_2_Savchenko_LeksonAI
             this.Name = "FormMain";
             this.Text = "FormMain";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_NecessaryOutput)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartAvr)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -397,5 +425,6 @@ namespace MO_31_2_Savchenko_LeksonAI
         private System.Windows.Forms.Label labelProbability;
         private System.Windows.Forms.Button buttonRecognize;
         private System.Windows.Forms.Button buttonTrain;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartAvr;
     }
 }

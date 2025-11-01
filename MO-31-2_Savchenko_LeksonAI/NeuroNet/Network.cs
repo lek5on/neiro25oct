@@ -1,4 +1,4 @@
-
+﻿
 using System;
 
 namespace MO_31_2_Savchenko_LeksonAI.NeuroNet
@@ -30,7 +30,7 @@ namespace MO_31_2_Savchenko_LeksonAI.NeuroNet
         public void Train(Network net)
         {
             net.input_layer = new InputLayer(NetworkMode.Train);
-            int epoches = 15;
+            int epoches = 20;
             double tmpSumError;
             double[] errors;
             double[] temp_gsums1;
