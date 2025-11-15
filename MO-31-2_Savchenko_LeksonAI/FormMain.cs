@@ -88,5 +88,17 @@ namespace MO_31_2_Savchenko_LeksonAI
 
             MessageBox.Show("Обучение успешно завершено.", "информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void buttonTest_Click(object sender, EventArgs e)
+        {
+            network.Test(network);
+
+            for (int i = 0; i < network.E_error_avr.Length; i++)
+            {
+                chartAvr.Series[0].Points.AddY(network.E_error_avr[i]);
+            }
+
+            MessageBox.Show("Тестирование успешно завершено.", "информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

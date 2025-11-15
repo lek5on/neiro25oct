@@ -29,9 +29,9 @@ namespace MO_31_2_Savchenko_LeksonAI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -56,6 +56,7 @@ namespace MO_31_2_Savchenko_LeksonAI
             this.buttonRecognize = new System.Windows.Forms.Button();
             this.buttonTrain = new System.Windows.Forms.Button();
             this.chartAvr = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.buttonTest = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_NecessaryOutput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartAvr)).BeginInit();
             this.SuspendLayout();
@@ -344,28 +345,41 @@ namespace MO_31_2_Savchenko_LeksonAI
             // 
             // chartAvr
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartAvr.ChartAreas.Add(chartArea2);
+            chartArea1.Name = "ChartArea1";
+            this.chartAvr.ChartAreas.Add(chartArea1);
             this.chartAvr.Location = new System.Drawing.Point(258, 26);
             this.chartAvr.Name = "chartAvr";
-            series2.BorderWidth = 3;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Name = "Series1";
-            this.chartAvr.Series.Add(series2);
+            series1.BorderWidth = 3;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Name = "Series1";
+            this.chartAvr.Series.Add(series1);
             this.chartAvr.Size = new System.Drawing.Size(632, 227);
             this.chartAvr.TabIndex = 23;
             this.chartAvr.Text = "chart1";
-            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            title2.Name = "Title1";
-            title2.Text = "График средних энергий ошибок";
-            this.chartAvr.Titles.Add(title2);
+            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            title1.Name = "Title1";
+            title1.Text = "График средних энергий ошибок";
+            this.chartAvr.Titles.Add(title1);
+            // 
+            // buttonTest
+            // 
+            this.buttonTest.BackColor = System.Drawing.Color.White;
+            this.buttonTest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTest.Location = new System.Drawing.Point(127, 259);
+            this.buttonTest.Name = "buttonTest";
+            this.buttonTest.Size = new System.Drawing.Size(102, 22);
+            this.buttonTest.TabIndex = 24;
+            this.buttonTest.Text = "тестирование";
+            this.buttonTest.UseVisualStyleBackColor = false;
+            this.buttonTest.Click += new System.EventHandler(this.buttonTest_Click);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(916, 276);
+            this.ClientSize = new System.Drawing.Size(916, 313);
+            this.Controls.Add(this.buttonTest);
             this.Controls.Add(this.chartAvr);
             this.Controls.Add(this.buttonTrain);
             this.Controls.Add(this.buttonRecognize);
@@ -426,5 +440,6 @@ namespace MO_31_2_Savchenko_LeksonAI
         private System.Windows.Forms.Button buttonRecognize;
         private System.Windows.Forms.Button buttonTrain;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartAvr;
+        private System.Windows.Forms.Button buttonTest;
     }
 }
