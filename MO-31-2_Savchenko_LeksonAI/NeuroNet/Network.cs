@@ -30,7 +30,7 @@ namespace MO_31_2_Savchenko_LeksonAI.NeuroNet
         public void Train(Network net)
         {
             net.input_layer = new InputLayer(NetworkMode.Train);
-            int epoches = 15;
+            int epoches = 25;
             double tmpSumError;
             double[] errors;
             double[] temp_gsums1;
@@ -81,17 +81,17 @@ namespace MO_31_2_Savchenko_LeksonAI.NeuroNet
         public void Test(Network net)
         {
             net.input_layer = new InputLayer(NetworkMode.Test);
-            int epoches = 5;
+            int epoches = 10;
             double tmpSumError;
             double[] errors;
-            double[] temp_gsums1;
-            double[] temp_gsums2;
 
             e_error_avr = new double[epoches];
+
             for (int k = 0; k < epoches; k++)
             {
                 e_error_avr[k] = 0;
                 net.input_layer.Shuffling_Array_Rows(net.input_layer.Testset);
+
                 for (int i = 0; i < net.input_layer.Testset.GetLength(0); i++)
                 {
                     double[] tmpTest = new double[15];
@@ -112,19 +112,9 @@ namespace MO_31_2_Savchenko_LeksonAI.NeuroNet
                         tmpSumError += errors[x] * errors[x] / 2;
                     }
                     e_error_avr[k] += tmpSumError / errors.Length;
-
-                    temp_gsums2 = net.output_layer.BackwardPass(errors);
-                    temp_gsums1 = net.hidden_layer2.BackwardPass(temp_gsums2);
-                    net.hidden_layer1.BackwardPass(temp_gsums1);
-
                 }
                 e_error_avr[k] /= net.input_layer.Testset.GetLength(0);
             }
-            net.input_layer = null;
-
-
-           
-
         }
     }
 }

@@ -98,7 +98,7 @@ namespace MO_31_2_Savchenko_LeksonAI
                 chartAvr.Series[0].Points.AddY(network.E_error_avr[i]);
             }
 
-            MessageBox.Show("Тестирование успешно завершено.", "информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Тестирование успешно завершено.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

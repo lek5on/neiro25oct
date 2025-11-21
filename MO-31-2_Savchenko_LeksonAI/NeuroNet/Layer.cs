@@ -15,8 +15,8 @@ namespace MO_31_2_Savchenko_LeksonAI.NeuroNet
         string pathFileWeights; //путь к файлу саниптическов весов
         protected int numofneurons; //число нейронов текущего слоя
         protected int numofprevneurons; //число нейронов предыдущего слоя
-        protected const double learningrate = 0.2275d; //скорость обучения
-        protected const double momentum = 0.021d; //момент инерции
+        protected const double learningrate = 0.17d; //скорость обучения
+        protected const double momentum = 0.0d; //момент инерции
         protected double[,] lastdeltaweights; //веса предыдущей итерации
         protected Neuron[] neurons; //массив нейронов текущего слоя
 
@@ -147,7 +147,7 @@ namespace MO_31_2_Savchenko_LeksonAI.NeuroNet
                         }
                     }
 
-                    // сохраняем weights в csv
+                    // Сохранение в CSV
                     string[] lines = new string[numofneurons];
                     for (int i = 0; i < numofneurons; i++)
                     {
